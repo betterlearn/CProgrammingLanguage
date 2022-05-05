@@ -27,9 +27,39 @@ typedef struct student {
 
 
 int main() {
-    STUDENT stud2 = {100310121, "王刚", 'M', {1991,5,19}, {72, 83, 90, 82}};
-    STUDENT stud1;
-    stud1 = stud2; /*同类型的结构体变量直接的赋值操作*/
+
+
+    STUDENT stud1, stud2;
+    int i;
+    printf("Input a record:\n");
+
+    printf("输入学号:\t");
+    scanf("%ld", &stud1.studentID);
+
+    //注意：字符数组在scanf中不加取地址&
+    printf("输入姓名:\t");
+    scanf("%s", stud1.studentName);
+
+    printf("输入性别(M\F):\t");
+    scanf(" %c", &stud1.studentSex);
+
+    printf("输入出生年:\t");
+    scanf("%d", &stud1.birthday.year);
+
+    printf("输入出生月:\t");
+    scanf("%d", &stud1.birthday.month);
+
+    printf("输入出生天:\t");
+    scanf("%d", &stud1.birthday.day);
+
+    printf("依次输入四门功课成绩：\t");
+    for(int i = 0; i < 4; i++) {
+        scanf("%d", &stud1.score[i]);
+    }
+
+
+    stud2 = stud1; /*同类型的结构体变量直接的赋值操作*/
+    printf("&stud2 = %p\n", &stud2); /*打印出结构体变量stud2的地址*/
     printf("stu2:%10ld%8s%3c%6d/%02d/%02d%4d%4d%4d%4d\n", stud1.studentID, stud1.studentName, stud1.studentSex, stud1.birthday.year, stud1.birthday.month, stud1.birthday.day, stud1.score[0],
            stud1.score[1], stud1.score[2], stud1.score[3]);
 

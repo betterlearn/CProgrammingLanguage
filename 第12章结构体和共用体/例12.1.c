@@ -40,7 +40,7 @@ int main() {
     printf("输入姓名:\t");
     scanf("%s", stud1.studentName);
 
-    printf("输入性别(M\F):\t");
+    printf("输入性别(M或者F):\t");
     scanf(" %c", &stud1.studentSex);
 
     printf("输入出生年:\t");
